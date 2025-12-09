@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "AccessMate AI - Accessibility Auditor",
+  "version": "1.0.0",
+  "description": "AI-powered accessibility scanner that finds and fixes WCAG issues instantly. Smart Lens for images, Voice Assistant, Focus Mode, and Dyslexia-friendly fonts.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*", "<all_urls>"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Open AccessMate",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
