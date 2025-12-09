@@ -1,5 +1,9 @@
 // background.js
-const API_KEY = "AIzaSyAYQ1KwJV_g-TNqmhLEH4KXvm4eWiO5MZ0"; 
+// Import config
+importScripts('config.js');
+
+// API key loaded from config.js
+const API_KEY = CONFIG.GOOGLE_API_KEY;
 const GEN_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
 // Click Icon -> Open UI
